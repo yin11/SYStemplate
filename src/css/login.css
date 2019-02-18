@@ -1,0 +1,81 @@
+/****登录页面****/
+body {
+  background: rgba(0, 0, 0, 0.5) url("../img/login-bg.png") no-repeat center;
+  background-size: cover;
+}
+.login .logo-box {
+  height: 200px;
+  text-align: center;
+}
+.login .logo-box img {
+  margin: 0 auto;
+  width: 206px;
+  height: 150px;
+}
+.login .form-box {
+  background: #f4f7fd;
+  padding: 10px 0;
+}
+.login .form-box .form {
+  width: 350px;
+  padding: 56px 95px 180px 30px;
+  background: url("../img/login-box.png") no-repeat;
+  margin: 0 auto;
+}
+.login .form-box .form h3 {
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+  position: relative;
+  margin-bottom: 85px;
+}
+.login .form-box .form h3:after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  border-radius: 4px;
+  background: #e40082;
+  position: absolute;
+  left: 50%;
+  margin-left: -50px;
+}
+.login .form-box .form .input {
+  width: 100%;
+  border: 1px solid #eee;
+  background: #f4f4f4;
+  padding: 12px;
+  height: 40px;
+  box-sizing: border-box;
+  margin-bottom: 18px;
+}
+.login .form-box .form .input.input-code {
+  width: 190px;
+}
+.login .form-box .form .code-img {
+  width: 150px;
+  height: 40px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.login .form-box .form .btn {
+  width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 10px;
+}
+.login .form-box .form .btn-login {
+  background: -webkit-linear-gradient(#ec74aa, #e40684);
+  background: -o-linear-gradient(#ec74aa, #e40684);
+  background: -moz-linear-gradient(#ec74aa, #e40684);
+  background: linear-gradient(#ec74aa, #e40684);
+  color: #fff;
+}
+.login .controls {
+  text-align: center;
+  color: #fff;
+  line-height: 2;
+  font-size: 12px;
+  margin-top: 20px;
+}

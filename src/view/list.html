@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet/less" type="text/css" href="../css/base.less" />
+    <script src="https://cdn.bootcss.com/less.js/3.0.0/less.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+
+    <!--my07time-->
+    <script src="../lib/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body>
+    <!--子页面-->
+    <div class="main-con ">
+        <!--标题-->
+        <div class="bg-f">
+            <h3 class="line-title">大标题<span class="subtitle">副标题</span></h3>
+        </div>
+        <div>
+            <h3 class="line-title bg-title">背景色大标题<span class="subtitle">副标题</span></h3>
+        </div>
+        <div>
+            <h5 class="secondary-title">二级标题</h5>
+        </div>
+        <!--新增模块-->
+        <div class="bg-f add-box">
+            <i class="ico-add icon-jiahao iconfont txt-f"></i><span>新增模块</span>
+        </div>
+
+        <!--按钮-->
+        <button class="btn btn-default">按钮</button>
+        <button class="btn btn-green ">按钮按钮</button>
+        <button class="btn btn-red">按钮</button>
+        <button class="btn btn-link">按钮链接</button>
+        <button class="btn btn-default btn-radius">按钮</button>
+        <button class="btn btn-red btn-radius">按钮</button>
+
+        <!--switch开关-->
+        <label >
+            <input class="btn-switch switch-box switch-animbg" type="checkbox" checked>
+        </label>
+        <label >
+            <input class="btn-switch switch-box switch-animbg" type="checkbox" >
+        </label>
+
+        <!--查询部分-->
+        <div class="clearfix pd-tb-20 search-box bg-f">
+            <div class="form-group fl-l">
+                <div class="form-title" >name</div>
+                <select class="form-control bg-c">
+                    <option>11</option>
+                    <option>11</option>
+                    <option>11</option>
+                </select>
+            </div>
+            <div class="form-group fl-l">
+                <div class="form-title" >name</div>
+                <input type="text" placeholder="请输入" class="form-control bg-c" maxlength="11">
+            </div>
+            <div class="form-group fl-l">
+                <div class="form-title" >时间</div>
+                <div class="datetime-box">
+                    <input type="text" placeholder="请输入" readonly class="form-control bg-c datetime "  onClick="WdatePicker()">
+                    <i class="iconfont icon-riqi ico-time"></i>
+                </div>
+            </div>
+            <button class="btn btn-search">查询</button>
+        </div>
+
+        <!--table-->
+        <div class="pd-30">
+            <table class="table bg-f">
+                <thead>
+                <tr>
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td>邮箱</td>
+                    <td class="td-w-60">时间</td>
+                    <td>操作</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td><input type="text" placeholder="请输入" class="input"></td>
+                    <td><textarea placeholder="请输入" class="input"></textarea></td>
+                    <td>
+                        <button class="btn btn-green ">按钮按钮</button>
+                        <button class="btn btn-red">按钮</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src=""></td>
+                    <td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名</td>
+                    <td>邮箱</td>
+                    <td>时间</td>
+                    <td>
+                        <button class="btn btn-green ">按钮按钮</button>
+                        <button class="btn btn-red">按钮</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td>邮箱</td>
+                    <td>时间</td>
+                    <td>
+                        <button class="btn btn-green ">按钮按钮</button>
+                        <button class="btn btn-red">按钮</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="txt-left">5</td>
+                    <td>4</td>
+                    <td class="txt-left">5</td>
+                    <td>4</td>
+                    <td>
+                        <button class="btn btn-green ">按钮按钮</button>
+                        <button class="btn btn-red">按钮</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>编号</td>
+                    <td>姓名</td>
+                    <td>邮箱</td>
+                    <td>时间</td>
+                    <td>
+                        <button class=" btn-link"><i class="iconfont  icon-fabu"></i></button>
+                        <button class=" btn-link"><i class="iconfont  icon-shanchu txt-r"></i></button>
+                        <button class=" btn-link"><i class="iconfont  icon-shanchu"></i></button>
+                        <button class="btn btn-red">按钮</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--分页-->
+        <div class="page-txt">
+            <P class="previous">当前共有<span class="txt-r">11</span>条记录</P>
+        </div>
+        <div class="pager">
+            <span class="prev item">上一页</span>
+            <span class="item">1</span>
+            <span class="item">2</span>
+            <span class="item">3</span>
+            <span class="next item">下一页</span>
+        </div>
+
+        <!--form-->
+        <div class="form bg-f">
+            <form>
+                <ul>
+                    <li class="form-group mb-30">
+                        <div class="form-title" for="name">name</div>
+                        <input  type="text" placeholder="请输入" class="form-control" id="name" >
+                        <span class="form-tip">提示语</span>
+                    </li>
+                    <li class="form-group mb-30">
+                        <div class="form-title" for="textarea">textarea</div>
+                        <textarea placeholder="请输入" name="textarea" class="form-control"></textarea>
+                        <span class="form-tip">提示语提示语提示语提示语提示语提示语提示语提示语提示语提示语</span>
+                    </li>
+                    <li class="form-group mb-30">
+                        <div class="form-title">textarea</div>
+                        <select class="form-control">
+                            <option>2</option>
+                            <option>2</option>
+                            <option>2</option>
+                            <option>2</option>
+                        </select>
+                    </li>
+                    <li class="form-group mb-30">
+                        <div class="form-title">textarea</div>
+                        <div class="clearfix">
+                            <div class="radio-box fl-l">
+                                <input type="radio" id="radio1" name="radio"><label class="iconfont" for="radio1">选择</label>
+                            </div>
+                            <div class="radio-box fl-l">
+                                <input type="radio" id="radio2" name="radio"><label class="iconfont" for="radio2">选择</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-group mb-30">
+                        <div class="form-title">textarea</div>
+                        <div class="clearfix">
+                            <div class="checkbox-box fl-l">
+                                <input type="checkbox" id="checkbox1"><label class="iconfont check" for="checkbox1">选择</label>
+                            </div>
+                            <div class="checkbox-box fl-l">
+                                <input type="checkbox" id="checkbox2"><label class="iconfont" for="checkbox2">选择</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-group mb-30 ">
+                        <div class="form-title">tab</div>
+                        <div class="tab-box">
+                            <div class="tab-title clearfix border-bottom">
+                                <div class="fl-l item active">tab1</div>
+                                <div class="fl-l item">tab2</div>
+                                <div class="fl-l item">tab2</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="form-group mb-30 form-center">
+                        <div class="form-title"></div>
+                        <button class="btn">提交</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
+
+        <!--五星评分-->
+        <div>
+            <span class="star">
+                <i class="star-item"></i>
+                <i class="star-item"></i>
+                <i class="star-item"></i>
+                <i class="star-item"></i>
+                <i class="star-item"></i>
+             </span>
+        </div>
+
+        <!--信息列表-->
+        <div class="user-list-box">
+            <h5 class="secondary-title">信息列表内容</h5>
+            <div class="user-list clearfix border-bottom">
+                <div class="fl-l">标题：你家的烦恼fdddsfggggggggggggggggggggggggg得紧紧的将</div>
+                <div class="fl-l">标题：你家的烦恼得紧紧的将</div>
+                <div class="fl-l">标题：你家的烦恼得紧紧的将</div>
+                <div class="fl-l">标题：你家的ggg得紧紧的将</div>
+                <div class="fl-l">标题：你家的烦恼得紧紧的将</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

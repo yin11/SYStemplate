@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增广告图</title>
+    <link rel="stylesheet/less" type="text/css" href="../css/base.less" />
+    <script src="https://cdn.bootcss.com/less.js/3.0.0/less.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+
+    <script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+</head>
+<body>
+    <!--子页面-->
+    <div class="main-con ">
+        <div class="triangle-dowm"></div>
+        <div class="bg-f">
+            <h3 class="line-title">新增广告图</h3>
+        </div>
+        <!--list-->
+        <div>
+            <!--table-->
+            <div class="pd-tb-20">
+                <table class="table bg-f">
+                    <thead>
+                    <tr>
+                        <td>图片</td>
+                        <td>姓名</td>
+                        <td>邮箱</td>
+                        <td class="td-w-60">时间</td>
+                        <td>操作</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><img src=""></td>
+                        <td>姓名</td>
+                        <td>邮箱</td>
+                        <td>时间</td>
+                        <td class="img-upload">
+                            <button class="btn btn-link">替换图片 </button>
+                            <input class="btn-upload"   type="file" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=""></td>
+                        <td>姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名姓名</td>
+                        <td>邮箱</td>
+                        <td>时间</td>
+                        <td>
+                            <button class="btn btn-green ">按钮按钮</button>
+                            <button class="btn btn-red">按钮</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=""></td>
+                        <td>姓名</td>
+                        <td>邮箱</td>
+                        <td>时间</td>
+                        <td>
+                            <button class="btn btn-green ">按钮按钮</button>
+                            <button class="btn btn-red">按钮</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=""></td>
+                        <td>4</td>
+                        <td class="txt-left">5</td>
+                        <td>4</td>
+                        <td>
+                            <button class="btn btn-green ">按钮按钮</button>
+                            <button class="btn btn-red">按钮</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src=""></td>
+                        <td>姓名</td>
+                        <td>邮箱</td>
+                        <td><span class="statistics-span txt-f">统计</span></td>
+                        <td>
+                            <button class=" btn-link"><i class="iconfont  icon-fabu"></i></button>
+                            <button class=" btn-link"><i class="iconfont  icon-shanchu txt-r"></i></button>
+                            <button class=" btn-link"><i class="iconfont  icon-shanchu"></i></button>
+                            <button class="btn btn-red">按钮</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--新增-->
+            <div class="add-con-box">
+                <!--二级标题-->
+                <h5 class="secondary-title">新增</h5>
+                <div  class="form bg-f">
+                    <form>
+                        <div class="form-group mb-30">
+                            <div class="form-title" >name</div>
+                            <input type="text" placeholder="请输入" class="form-control" >
+                        </div>
+                        <div class="form-group mb-30">
+                            <div class="form-title" >name</div>
+                            <input type="text" placeholder="请输入" class="form-control" >
+                        </div>
+                        <div class="form-group mb-30">
+                            <div class="form-title" >name</div>
+                            <div>
+                                <img src="">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--flex-box-->
+        <div class="flex-box bg-c">
+            <div class="item bg-f">
+                <div class="ico-box bg-r"><i class="icon-zongxiaoliang iconfont txt-f"></i></div>
+                <h5 class="txt-r">卡总量</h5>
+                <p>5000张</p>
+                <p>已激活（10000）</p>
+            </div>
+            <div class="item bg-f">
+                <div class="ico-box bg-green"><i class="icon-xinxinicon iconfont txt-f"></i></div>
+                <h5 class="txt-green">卡总量</h5>
+                <p>5000张</p>
+                <p>已激活（10000）</p>
+            </div>
+            <div class="item bg-f">
+                <div class="ico-box bg-yellow"><i class="icon-tag iconfont txt-f"></i></div>
+                <h5 class="txt-yellow">卡总量</h5>
+                <p>5000张</p>
+                <p>已激活（10000）</p>
+            </div>
+        </div>
+
+        <!--饼图-->
+        <div class="pie">
+            <div id="main" style="width: 600px;height:400px;"></div>
+        </div>
+
+        <!--曲线图-->
+        <div>
+            <div id="lineBox" style="width: 600px;height:400px;"></div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('main'));
+    // 指定图表的配置项和数据
+    option = {
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)"
+        },
+
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['50%', '70%'],
+                avoidLabelOverlap: false,
+                label: {
+                    normal: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        show: true,
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                data:[
+                    {value:335, name:'直接访问'},
+                    {value:310, name:'邮件营销'},
+                    {value:234, name:'联盟广告'},
+                    {value:135, name:'视频广告'},
+                    {value:1548, name:'搜索引擎'}
+                ]
+            }
+        ]
+    };
+    // 使用刚指定的配置项和数据显示图表。
+    myChart.setOption(option);
+
+
+    /*曲线图*/
+    var lineBox = echarts.init(document.getElementById('lineBox'));
+    option2 = {
+        title: {
+            text: '堆叠区域图'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line',
+            smooth: true
+        }]
+    };
+    lineBox.setOption(option2);
+</script>
+
+</html>

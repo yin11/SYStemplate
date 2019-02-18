@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet/less" type="text/css" href="../css/base.less" />
+    <link rel="stylesheet" type="text/css" href="../css/iconfont.css">
+    <script src="https://cdn.bootcss.com/less.js/3.0.0/less.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="../js/base.js"></script>
+    <script src="../lib/layer/layer.js"></script>
+</head>
+<body class="body-top">
+    <!--top-->
+    <div class="navbar ">
+        <img src="" class="logo " >
+        <!--登录信息-->
+        <div class="clearfix">
+            <div class="fl-l">
+                <input type="text" placeholder="请输入" class="search-input">
+            </div>
+            <div class="fl-r clearfix">
+                <div class="fl-l user-info">
+                    <img src="" class="user-img">
+                    <span>管理员</span>
+                    <i class=" iconfont icon-triangle-bottom"></i>
+                    <ul class="user-menu bg-f triangle-dowm">
+                        <li>
+                            <a href="#">
+                                <i class="icon-cog"></i>安全设置
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon-user"></i>个人资料
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="javascript:g.logout();">
+                                <i class="icon-off"></i>退出
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fl-l download"><i class="icon-download iconfont"></i></div>
+            </div>
+        </div>
+    </div>
+    <!--content-->
+    <div class="main">
+        <!--侧边栏-->
+        <div class="sidebar">
+            <ul class="nav">
+                <li class=" onelevel-li">
+                    <a href="#">
+                        <i class="icon icon-dingdanliangzoushi iconfont "></i>
+                        <span class="mixin-class">运营配置</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="active">
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon icon-wode iconfont"></i>
+                        <span class="mixin-id">CRM管理</span>
+                    </a>
+                    <ul class="submenu">
+                        <li class="on">
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="icon"></i>
+                                <span class="mixin-class">区块管理</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon"></i>
+                        <span>营销管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon icon-wodedingdan iconfont"></i>
+                        <span>订单管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-3"></i>
+                        <span>充值管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-xitong1"></i>
+                        <span>新闻管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-baobiaotongji"></i>
+                        <span>报表统计</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-xitong"></i>
+                        <span>配置管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-guanggaoguanli"></i>
+                        <span>广告管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-cc-tag"></i>
+                        <span>在线续卡</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-18"></i>
+                        <span>卡券活动</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-jifen"></i>
+                        <span>积分活动</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-huiyuanguanli"></i>
+                        <span>会员管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-cc-tag"></i>
+                        <span>职员管理</span>
+                    </a>
+                </li>
+                <li class="onelevel-li">
+                    <a href="#">
+                        <i class="icon iconfont icon-xiaoxituisong"></i>
+                        <span>推送管理</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--页面内容-->
+        <div class="page-con">
+            <iframe width="100%" height="100%"  frameborder="no" scrolling="yes" src="code.html"></iframe>
+        </div>
+    </div>
+</body>
+</html>

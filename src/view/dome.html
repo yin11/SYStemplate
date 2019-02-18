@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 300px;
+            border: 2px solid #858585;
+        }
+        #imgshow{
+            width: 100%;
+            height: 100%;
+        }
+        #pox{
+            width: 70px;
+            height: 24px;
+            overflow: hidden;
+        }
+
+
+        .mui-switch {
+            width: 52px;
+            height: 31px;
+            position: relative;
+            border: 1px solid #dfdfdf;
+            background-color: #fdfdfd;
+            box-shadow: #dfdfdf 0 0 0 0 inset;
+            border-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-clip: content-box;
+            display: inline-block;
+            -webkit-appearance: none;
+            user-select: none;
+            outline: none; }
+        .mui-switch:before {
+            content: '222';
+            width: 29px;
+            height: 29px;
+            position: absolute;
+            top: 0px;
+            left: 0;
+            border-radius: 20px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
+        .mui-switch:checked {
+            border-color: #64bd63;
+            box-shadow: #64bd63 0 0 0 16px inset;
+            background-color: #64bd63; }
+        .mui-switch:checked:before {
+            left: 21px; }
+        .mui-switch.mui-switch-animbg {
+            transition: background-color ease 0.4s; }
+        .mui-switch.mui-switch-animbg:before {
+            transition: left 0.3s; }
+        .mui-switch.mui-switch-animbg:checked {
+            box-shadow: #dfdfdf 0 0 0 0 inset;
+            background-color: #64bd63;
+            transition: border-color 0.4s, background-color ease 0.4s; }
+        .mui-switch.mui-switch-animbg:checked:before {
+            transition: left 0.3s; }
+        .mui-switch.mui-switch-anim {
+            transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s; }
+        .mui-switch.mui-switch-anim:before {
+            transition: left 0.3s; }
+        .mui-switch.mui-switch-anim:checked {
+            box-shadow: #64bd63 0 0 0 16px inset;
+            background-color: #64bd63;
+            transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s; }
+        .mui-switch.mui-switch-anim:checked:before {
+            transition: left 0.3s; }
+
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id="box">
+        <img id="imgshow" src="" alt=""/>
+    </div>
+    <div id="pox">
+        <input id="filed" type="file" accept="image/*"/>
+    </div>
+    <label><input class="mui-switch" type="checkbox"> 默认未选中</label>
+    <label><input class="mui-switch" type="checkbox" checked> 默认选中</label>
+    <label><input class="mui-switch switch-animbg" type="checkbox"> 默认未选中,简单的背景过渡效果,加mui-switch-animbg类即可</label>
+    <label><input class="mui-switch mui-switch-animbg" type="checkbox" checked> 默认选中</label>
+    <label><input class="mui-switch mui-switch-anim" type="checkbox"> 默认未选中，过渡效果，加 mui-switch-anim
+        类即可</label>
+    <label><input class="mui-switch mui-switch-anim" type="checkbox" checked> 默认选中</label>
+</body>
+<script>
+    //在input file内容改变的时候触发事件
+    $('#filed').change(function(){
+        //获取input file的files文件数组;
+        //$('#filed')获取的是jQuery对象，.get(0)转为原生对象;
+        //这边默认只能选一个，但是存放形式仍然是数组，所以取第一个元素使用[0];
+        var file = $('#filed').get(0).files[0];
+        //创建用来读取此文件的对象
+        var reader = new FileReader();
+        //使用该对象读取file文件
+        reader.readAsDataURL(file);
+        //读取文件成功后执行的方法函数
+        reader.onload=function(e){
+            //读取成功后返回的一个参数e，整个的一个进度事件
+            console.log(e);
+            //选择所要显示图片的img，要赋值给img的src就是e中target下result里面
+            //的base64编码格式的地址
+            $('#imgshow').get(0).src = e.target.result;
+        }
+    })
+</script>
+
+
+
+<!-- multiple多个文件 -->
+<input type="file" multiple name="" id="myfilePhoto" value="" accept="image/jpg, image/png">
+<ul class="fileUl"></ul>
+<script>
+    document.getElementById('myfilePhoto').addEventListener("change",function(){
+        var inputFile = document.getElementById('myfilePhoto');
+        for(var i = 0; i<inputFile.files.length ;i++){
+            var fr = new FileReader(); // 这个FileReader应该对应于每一个读取的文件都需要重新new一个
+            var files = inputFile.files[i]; // files可以获取当前文件输入框中选择的所有文件，返回列表
+            fr.readAsDataURL(files); // 读取的内容是加密以后的本地文件路径
+            fr.onload = function(e){ // 数据读取完成时触发onload对应的响应函数
+                // e.target是FileReader等同于fr
+                var ulLi = document.createElement('li');
+                var ulLiA = document.createElement('a');
+                var ulLiimg = document.createElement('img');
+                ulLiimg.src = e.target.result
+                ulLiA.appendChild(ulLiimg);
+                ulLi.appendChild(ulLiA);
+                console.log(document.getElementsByClassName('fileUl'))
+                document.getElementsByClassName('fileUl')[0].appendChild(ulLi)
+            }
+        }
+    });
+</script>
+<script>
+    function updateSize() {
+        var nBytes = 0;
+        var oFiles = document.getElementById("uploadInput").files;
+        var nFiles = oFiles.length;
+        for (var nFileId = 0; nFileId < nFiles; nFileId++) {
+            nBytes += oFiles[nFileId].size;
+        }
+        var sOutput = nBytes + " bytes";
+        var aMultiples = ["KiB", "MiB", "GiB", "TiB", "PiB", "EiB", "ZiB", "YiB"];
+        var nMultiple = 0, nApprox = nBytes / 1024;
+
+        for ( ; nApprox > 1; nApprox /= 1024, nMultiple++) {
+            sOutput = nApprox.toFixed(3) + " " + aMultiples[nMultiple] + " (" + nBytes + " bytes)";
+        }
+
+        document.getElementById("fileNum").innerHTML = nFiles;
+        document.getElementById("fileSize").innerHTML = sOutput;
+    }
+</script>
+<p>
+    <input id="uploadInput" type="file" name="myFiles" onchange="updateSize();" multiple>
+    选择的文件数：<span id="fileNum">0</span>
+    总共大小：<span id="fileSize">0</span>
+</p>
+
+</html>

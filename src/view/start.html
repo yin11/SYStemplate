@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Rating</title>
+    <script src="../js/jquery-1.9.1.min.js"></script>
+    <script src="../lib/jqueryScore/js/score.js"></script>
+    <link href="../lib/jqueryScore/css/style.css">
+    <style>
+        .star-item{
+            display: inline-block;
+            margin: 0 1px;
+            width: 19px;
+            height: 19px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAq1BMVEUAAADFxMK4t7XFxMK8u7nFxMKqqaeop6TFxMKhoJ88Ozuqqae+vbu/vry+vbvFxMK8u7mxsK7FxMKvrqynpqS9vLu9vLuhn53FxMKbm5i4t7WjoqG5uLa3trTFxMK2tbTFxMLFxMLFxMLj4+HT0tDt7eri4t7c3Nfm5uPd3drZ2dbY19Xo6OXl5ePl5eHV1dPMzMr39/by8vDv7u3p6eff39vQz87FxMLBwL17WuIwAAAAI3RSTlMA5EE03aVuZSUfDwri29XPzMjDvrSvnZ2TkHh0cmZaWkstGzqwmZMAAACZSURBVBjTZY5VDsMwEAUdapIyM5vtMN//ZE3VbSWr87Oa+XhaBDwfyMRbmm4TdTXCrCqt0c+c+15SWntO8LbAaps0LiNB4yZrLQehE8kLKiKBqyInB9SzIzHDCWaSkfVnY6UZl5LXegG7YZcorjTuwu8TWcIZ4zizIZw1FSnBVB0hbHE6udymJNpAmLuDYX98dwzBR0Df/3kBdSQPpMvtjmUAAAAASUVORK5CYII=) no-repeat;
+            vertical-align: -2px;
+            cursor: pointer;
+        }
+        .star-on{
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAilBMVEUAAAClbADpmwDbiQitcxHdiADomQH2uiX5vR/uqhzjkQC0m3OxnX7UgwDztBaycQDfpxXQlQi/fgCOXAD7vA/ikADijwDyrxb0sxXysBvvrBvroxHonhDwpgDtoQDomgDmlQD1rQDsnwD4tw74sgDyqQDqnAD7uAD6tgDgjADkkgDijwD0sQz9vADrV+caAAAAHXRSTlMADcaME/fMs7CjlIJvYF00MiEfCv7x8e3tyMh9fZ+40c4AAACPSURBVBjTbY7HEoMwDAVFCb2TnmCBbUxL/v/3IsY+xDPs5Wn3JDDUNdiEoe2VEJUVonmK/r0Q0/dc6Nt/x8/bR87TLO6P+OWDEyDvxkFKOYwdDxwAx1WMykDOXPK9cNYRxokGFWeMcdWApu0RUSH2rQnltvY7a2lCvizXJLlsS26Cd/J8eojGhDTTm6VwwA9MsAv9R23PrQAAAABJRU5ErkJggg==") no-repeat;
+        }
+    </style>
+</head>
+<body>
+     <span class="star" data-level="2">
+        <i class="star-item" title="1"></i>
+        <i class="star-item" title="2"></i>
+        <i class="star-item" title="3"></i>
+        <i class="star-item" title="4"></i>
+        <i class="star-item" title="5"></i>
+     </span>
+<br>
+ <span class="star" data-level="0">
+        <i class="star-item" title="1"></i>
+        <i class="star-item" title="2"></i>
+        <i class="star-item" title="3"></i>
+        <i class="star-item" title="4"></i>
+        <i class="star-item" title="5"></i>
+     </span>
+     <div class='score'>
+         <div class='score-star'></div>
+     </div>
+
+    <!--测试label与没有label-->
+    <div>
+        <label>
+            <input type="checkbox">label1
+        </label>
+    </div>
+    <div>
+        <input type="checkbox">label2
+    </div>
+</body>
+<script>
+    function starScore(callback){
+        var level_num,
+            _hover = true;
+        $(".star-item").hover(function(e){
+            if(_hover){
+                var _num = $(this).index(),
+                        _parent = $(this).parents(".star");
+                level_num = _parent.attr("data-level");
+                _parent.find(".star-item").removeClass("star-on");
+                for (var i = 0; i <= _num; i++) {
+                    _parent.find(".star-item").eq(i).addClass("star-on");
+                }
+            }
+        },function(e){
+            if(_hover){
+                var _num = $(this).index(),
+                    _parent = $(this).parents(".star");
+                level_num = _parent.attr("data-level")-1;
+                console.log(level_num)
+                _parent.find(".star-item").removeClass("star-on");
+                for (var i = 0; i <= level_num; i++) {
+                    _parent.find(".star-item").eq(i).addClass("star-on");
+                }
+            }
+
+        }).click(function(){
+            _hover = false;
+            var _num = $(this).index();
+            var _parent = $(this).parents(".star");
+            _parent.attr("data-level",_num+1);
+            _parent.find(".star-item").removeClass("star-on");
+            for (var i = 0; i <= _num; i++) {
+                _parent.find(".star-item").eq(i).addClass("star-on");
+            }
+            callback(_parent.attr("data-ueseid"),_num);
+            setTimeout(function(){
+                _hover = true;
+            },100);
+        })
+    }
+    $(document).ready(function(){
+        starScore();
+        //$('.score').score();
+    })
+
+
+</script>
+</html>
